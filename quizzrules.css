@@ -112,11 +112,11 @@ body {
 
   @media (max-width: 414px) {
     .rules {
-        height: 58vh;
+        height: 56vh;
     }
     body {
         margin-top: 7px;
-        margin-bottom: 22px;
+        margin-bottom: 15px;
     }
   }
 

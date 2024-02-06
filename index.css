@@ -164,7 +164,7 @@ body {
 }
 @media(max-width: 412px){
     .quizTopic {
-        margin-bottom: 7px;
+        margin-bottom: 12px;
     }
     body {
         height: 182vh;

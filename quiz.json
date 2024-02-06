@@ -8,9 +8,9 @@
                 "question": "What does HTML stand for?",
                 "answer": "Hypertext Markup Language",
                 "options": [
-                  "Hypertext Markup Language",
-                  "Hyperlink and Text Markup Language",
-                  "High-Level Text Markup Language",
+                    "Hyperlink and Text Markup Language",
+                    "High-Level Text Markup Language",
+                    "Hypertext Markup Language",
                   "Home Tool Markup Language"
                 ]
               },
@@ -18,9 +18,9 @@
                 "question": "What is the purpose of the HTML <meta> tag?",
                 "answer": "Define metadata about the document",
                 "options": [
-                  "Define metadata about the document",
-                  "Create a hyperlink",
-                  "Insert an image",
+                    "Create a hyperlink",
+                    "Define metadata about the document",
+                    "Insert an image",
                   "Define a paragraph"
                 ]
               },
@@ -28,18 +28,18 @@
                 "question": "What is the importance of the HTML <doctype> declaration?",
                 "answer": "Defines the document type and version of HTML",
                 "options": [
-                  "Defines the document type and version of HTML",
-                  "Creates a hyperlink",
-                  "Specifies the color of text",
-                  "Defines a paragraph"
+                    "Creates a hyperlink",
+                    "Specifies the color of text",
+                    "Defines a paragraph",
+                    "Defines the document type and version of HTML"
                 ]
               },
               {
                 "question": "What is the purpose of the HTML <head> element?",
                 "answer": "Contains meta-information about the HTML document",
                 "options": [
-                  "Contains meta-information about the HTML document",
-                  "Defines the main content of the document",
+                    "Defines the main content of the document",
+                    "Contains meta-information about the HTML document",
                   "Represents a header in the document",
                   "Specifies a paragraph"
                 ]
@@ -48,8 +48,8 @@
                 "question": "Why is it important to use semantic HTML?",
                 "answer": "Enhances accessibility and SEO",
                 "options": [
+                    "Enhances accessibility and SEO",
                   "Improves visual appearance",
-                  "Enhances accessibility and SEO",
                   "Reduces file size",
                   "Increases page load speed"
                 ]
@@ -70,8 +70,8 @@
                 "options": [
                   "XHTML supports fewer tags",
                   "HTML is newer than XHTML",
-                  "HTML allows more flexibility in syntax",
-                  "XHTML is stricter and follows XML syntax rules"
+                  "XHTML is stricter and follows XML syntax rules",
+                  "HTML allows more flexibility in syntax"
                 ]
               },
               {
@@ -98,8 +98,8 @@
                 "question": "What is the purpose of the HTML <cite> tag?",
                 "answer": "Represents the title of a creative work",
                 "options": [
+                    "Represents the title of a creative work",
                   "Defines a citation",
-                  "Represents the title of a creative work",
                   "Creates a hyperlink",
                   "Specifies a paragraph"
                 ]
@@ -123,8 +123,8 @@
                 "question": "Which CSS property is used to change the text color of an element?",
                 "answer": "color",
                 "options": [
-                  "color",
-                  "text-color",
+                    "text-color",
+                    "color",
                   "font-color",
                   "text-style"
                 ]
@@ -133,18 +133,18 @@
                 "question": "In CSS, how do you select an element with the id 'example'?",
                 "answer": "#example",
                 "options": [
-                  "#example",
-                  ".example",
-                  "element.example",
-                  "id.example"
+                    ".example",
+                    "element.example",
+                    "id.example",
+                    "#example"
                 ]
               },
               {
                 "question": "What is the purpose of the CSS property 'margin'?",
                 "answer": "Sets the space outside the border of an element",
                 "options": [
-                  "Sets the space outside the border of an element",
-                  "Sets the space inside the border of an element",
+                    "Sets the space inside the border of an element",
+                    "Sets the space outside the border of an element",
                   "Changes the background color of an element",
                   "Sets the width of an element"
                 ]
@@ -153,10 +153,10 @@
                 "question": "Which CSS property is used to control the layout of an element?",
                 "answer": "display",
                 "options": [
-                  "display",
-                  "position",
-                  "layout",
-                  "align"
+                    "position",
+                    "layout",
+                    "display",
+                    "align"
                 ]
               },
               {
@@ -183,8 +183,8 @@
                 "question": "What does the CSS property 'opacity' control?",
                 "answer": "The transparency of an element",
                 "options": [
-                  "The transparency of an element",
-                  "The font size of an element",
+                    "The transparency of an element",
+                    "The font size of an element",
                   "The color of an element",
                   "The spacing around an element"
                 ]
@@ -195,8 +195,8 @@
                 "options": [
                   "element",
                   ".class",
-                  "#id",
-                  "*"
+                  "*",
+                  "#id"
                 ]
               },
               {

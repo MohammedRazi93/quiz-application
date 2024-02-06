@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="quizReact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="quiz_box" id="quiz-screen">
+        <header>
+            <div class="title">Awesome Quiz Application</div>
+            <div class="timer">
+                <div class="time_left_txt">Time Left</div>
+                <div class="timer_sec">30</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+
+        <section>
+            <div class="que_text">
+                <span></span>
+            </div>
+            <div class="option_list">
+                <div class="option">
+                    <span></span>
+                    <div class="icon tick"><i class="fas fa-check"></i></div>
+                </div>
+                <div class="option">
+                    <span></span>
+                    <div class="icon cross"><i class="fas fa-times"></i></div>
+                </div>
+                <div class="option">
+                    <span></span>
+
+                </div>
+                <div class="option">
+                    <span></span>
+
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="total_que">
+                <span>
+                    <p>2</p> of <p>10</p> Questions
+                </span>
+            </div>
+            <button class="next_btn">Next</button>
+        </footer>
+    </div>
+
+    <script>
+        const quizBox = document.getElementById('quiz-screen');
+        const queText = quizBox.querySelector('.que_text span');
+            const optionList = quizBox.querySelector('.option_list');
+            const nextButton = quizBox.querySelector('.next_btn');
+            const totalQuestionsElement = quizBox.querySelector(".total_que");
+        document.addEventListener('DOMContentLoaded', function () {
+            const selectedTopic = localStorage.getItem('selectedTopic');
+            if (selectedTopic === 'HTML') {
+                fetchData('HTML');
+            } else if (selectedTopic === 'CSS') {
+                fetchData('CSS');
+            } else if (selectedTopic === 'Javascript') {
+                fetchData('Javascript');
+            }
+        });
+
+        let reactQuestions;
+        let currentQuestionIndex = 0;
+        let timerInterval;
+
+        function loadQuestion() {
+            let timeLeft = 30;
+        const totalTime = 30;
+         timerInterval = setInterval(function () {
+            timerSec.textContent = timeLeft;
+            if(timeLeft < 10) {
+                const formattedTime = `0${timeLeft}`;
+                timerSec.textContent = formattedTime;
+            }
+            if (timeLeft === 0) {
+                clearInterval(timerInterval);
+                handleTimeUp();
+            } else {
+                timeLeft--;
+            }
+        }, 1000);
+            queText.innerText = reactQuestions.quiz[currentQuestionIndex].question;
+            optionList.innerHTML = '';
+            nextButton.style.display = 'none';
+
+            reactQuestions.quiz[currentQuestionIndex].options.forEach(option => {
+                const optionElement = document.createElement('div');
+                optionElement.classList.add('option');
+                optionElement.innerHTML = `
+                                    <span>${option}</span>
+                                    <div class="icon"></div>
+                                `;
+                optionElement.addEventListener('click', () => handleOptionClick(optionElement, option));
+                optionList.appendChild(optionElement);
+            });
+            updateQuestionCount();
+        }
+
+        
+
+        function updateQuestionCount() {
+                            totalQuestionsElement.innerHTML = `${currentQuestionIndex + 1} of ${reactQuestions.quiz.length} Questions`;
+                        }
+
+        function fetchData(topic) {
+            fetch('quiz.json')
+                .then(response => response.json())
+                .then(data => {
+                     reactQuestions = data.quiz_topics.find(item => item.techName === topic);
+
+                    if (reactQuestions) {
+                        const quizBox = document.getElementById('quiz-screen');
+                        const queText = quizBox.querySelector('.que_text span');
+                        const optionList = quizBox.querySelector('.option_list');
+                        const nextButton = quizBox.querySelector('.next_btn')
+                        const totalQuestionsElement = quizBox.querySelector(".total_que span");
+
+                        loadQuestion();
+                        nextButton.style.display = 'none';
+
+                        
+                        nextButton.addEventListener('click', () => {
+                            currentQuestionIndex++;
+                            if (currentQuestionIndex < reactQuestions.quiz.length) {
+                                loadQuestion();
+                            } else {
+                                window.location.href = "result.html";
+                                showResult();
+                                console.log('Quiz Completed!');
+                            }
+                        });
+                    } else {
+                        console.error(`No questions found for ${topic}`);
+                    }
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        function handleOptionClick(optionElement, selectedOption) {
+            let myindex = currentQuestionIndex;
+            const nextButton = document.querySelector(".next_btn")
+            const isCorrect = selectedOption === reactQuestions.quiz[myindex].answer;
+            clearInterval(timerInterval);
+            if (isCorrect) {
+                optionElement.classList.add('correct');
+                reactQuestions.score = (reactQuestions.score || 0) + 1;
+            } else {
+                optionElement.classList.add('incorrect');
+            }
+            const allOptions = document.querySelectorAll('.option');
+            allOptions.forEach(option => {
+                option.style.opacity = 0.6;
+                option.classList.add('disabled');
+                // nextButton.style.visibility = 'visible';
+            });
+            nextButton.style.display = 'block';
+        }
+
+        const timerSec = document.querySelector(".timer_sec");
+        // const timeLine = document.querySelector(".time_line");
+
+        
+
+        function handleTimeUp() {
+            clearInterval(timerInterval);
+    const allOptions = document.querySelectorAll('.option');
+    const nextButton = document.querySelector(".next_btn");
+    allOptions.forEach(option => {
+        option.style.opacity = 0.6;
+        option.classList.add('disabled');
+    });
+    nextButton.style.display = 'block';
+
+            currentQuestionIndex++;
+            if (currentQuestionIndex < reactQuestions.quiz.length) {
+                loadQuestion();
+            } else {
+                showResult();
+                console.log('Quiz Completed!');
+            }
+        }
+
+        function showResult() {
+            const totalScore = reactQuestions.score || 0;
+            window.location.href = `result.html?score=${totalScore}`;
+        }
+    </script>
+</body>
+
+</html>

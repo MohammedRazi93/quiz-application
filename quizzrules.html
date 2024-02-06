@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="quizzrules.css">
+</head>
+<body>
+    <div class="rulesWrapper" id="rules-screen">
+        <h2 class="rulesHead">Rules and Instructions:</h2>
+        <div class="rules">
+            <ol class="rulesList">
+                <li>Welcome to my quiz app. In this quiz you have 3 topics and have 10 questions in each topic.Each questions you have 4 choices.</li>
+                <li>Read each question carefully because Once you select your answer, it can't be undone.</li>
+                <li>You have only <span>30 seconds</span> per each question. If you select answer before time you will get next button in bottom right.</li>
+                <li>If the time goes off it will automatically move next question. You can't exit from the Quiz while you're playing.</li>
+                <li>You'll get points on the basis of your correct answers.</li>
+            </ol>
+        </div>
+        <div class="Btn">
+            <button class="homeBtn btn-grad" id="home">Exit Quiz</button>
+            <button class="playBtn btn-grad" id="playBtn" onclick="loadQuiz()">Continue</button>
+        </div>
+    </div>
+    <script src="quizzrules.js"></script>
+</body>
+</html>

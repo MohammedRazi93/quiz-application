@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="result.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+
+</head>
+<body>
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">You've completed the Quiz!</div>
+        <div class="score_text"> 
+             <p></p>  <p></p>
+        </div>
+        <div class="buttons">
+            <button class="restart">Replay Quiz</button>
+            <button class="quit" id="quitBtn">Quit Quiz</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const scoreElement = document.querySelector('.score_text p');
+            const replayButton = document.querySelector('.restart');
+
+            replayButton.addEventListener('click', function () {
+                window.location.href = "quizgit.html";
+            });
+            const urlParams = new URLSearchParams(window.location.search);
+            const score = urlParams.get('score');
+            if (score !== null) {
+                scoreElement.textContent = `Your Score is: ${score} out of 10`;
+            }
+        });
+        const result_box = document.querySelector(".result_box");
+        const quitBtn = document.querySelector("#quitBtn");
+
+        quitBtn.addEventListener("click", () => {
+            result_box.style.display = "none";
+            if (result_box.style.display = "none") {
+                window.location.href = "index.html";
+            } else {
+                result_box.style.display = 'block';
+            }
+        })
+
+        
+    </script>
+</body>
+</html>

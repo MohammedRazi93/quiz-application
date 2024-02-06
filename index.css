@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: url(/images/bg2.jpg) no-repeat center center ;
+    background-size: cover; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    width: 80%;
+    height: 70%;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow:
+    0 0 60px  #fff,  /* inner white */
+    0 0 100px  #f0f, /* middle magenta */
+    0 0 140px  #0ff; /* outer cyan */
+    border-radius: 20px;
+}
+
+.quizHead {
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 4px 4px #ccc;
+}
+
+.topics {
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid red; */
+    height: 57vh;
+    margin-top: 12px;
+}
+
+.javaScript {
+    /* border: 1px solid black; */
+    padding: 15px;
+    width: 300px;
+    background: #cccccc21;
+    border-radius: 12px;
+}
+
+.javaScript:hover {
+    box-shadow: 0px 0px 10px #616060;
+    transition: all 0.8s ease;
+}
+
+.reactJs:hover {
+    box-shadow: 0px 0px 10px #616060;
+    transition: all 0.8s ease;
+}
+
+.git:hover {
+    box-shadow: 0px 0px 10px #616060;
+    transition: all 0.8s ease;
+}
+
+.reactJs {
+    /* border: 1px solid black; */
+    padding: 15px;
+    width: 300px;
+    background: #cccccc21;
+    border-radius: 12px;
+}
+.git {
+    /* border: 1px solid black; */
+    padding: 15px;
+    width: 300px;
+    background: #cccccc21;
+    border-radius: 12px;
+}
+
+.javaScript, .reactJs, .git {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.quizTopic {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.img {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.btn-grad {
+    background-image: linear-gradient(to right, #E55D87 0%, #5FC3E4  51%, #126617  100%);
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #000;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    cursor: pointer;
+    border: 1px solid #979595;
+  }
+
+  .reactJsBtn {
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+
+@media(max-width: 1050px) {
+    .wrapper {
+        width: 90%;
+    }
+}
+
+@media (max-width: 850px) {
+    .wrapper {
+        width: 95%;
+    }
+    .javaScript, .reactJs, .git {
+        margin-right: 7px;
+    }
+}
+
+@media(max-width: 750px) {
+    body {
+        height: 188vh;
+    }
+
+    .topics {
+        flex-wrap: wrap;
+    }
+
+    .git {
+        margin-top: 10px;
+    }
+}
+
+@media(max-width: 687px) {
+    body {
+        height: 265vh;
+    }
+}
+

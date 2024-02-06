@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App </title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h2 class="quizHead">Quiz App</h2>
+        <div class="topics">
+            <div class="javaScript">
+                    <h4 class="quizTopic">HTML</h4>
+                <div class="img">
+                    <img src="/images/html1.png" width="160" alt="HTML logo">
+                </div>
+                <div class="Btn">
+                    <button class="startBtn btn-grad" id="startJs" onclick="startQuiz('HTML')">Start HTML Quiz</button>
+                </div>
+            </div>
+            <div class="reactJs">
+                    <h4 class="quizTopic">CSS</h4>
+                <div class="img">
+                    <img src="/images/CSS.png" width="200" alt="CSSLogo">
+                </div>
+                <div class="Btn">
+                    <button class="startBtn btn-grad reactJsBtn" id="startReactJs" onclick="startQuiz('CSS')">Start CSS Quiz</button>
+                </div>
+            </div>
+            <div class="git">
+                    <h4 class="quizTopic">javaScript</h4>
+                <div class="img">
+                    <img src="/images/JS1.png" width="300" alt="gitLogo">
+                </div>
+                <div class="Btn">
+                    <button class="startBtn btn-grad" id="startGit" onclick="startQuiz('Javascript')">Start JS Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

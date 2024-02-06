@@ -162,4 +162,9 @@ body {
         height: 265vh;
     }
 }
+@media(max-width: 412px){
+    .quizTopic {
+        margin-bottom: 7px;
+    }
+}
 

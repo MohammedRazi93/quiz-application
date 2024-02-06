@@ -235,10 +235,13 @@ footer button.show{
     .quiz_box section .que_text {
         font-size: 21px;
     }
+    .quiz_box {
+        width: 95vw;
+    }
 }
 
 @media (max-width: 320px) {
     .quiz_box {
-        width: 98vw;
+        width: 93vw;
     }
 }

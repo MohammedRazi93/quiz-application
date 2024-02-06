@@ -224,6 +224,11 @@ footer button.show{
         width: 95vw;
     }
 }
+@media(max-width: 412px){
+    .quiz_box {
+        width: 94vw;
+    }
+}
 
 @media(max-width: 375px) {
     body {
@@ -232,6 +237,9 @@ footer button.show{
 
     .quiz_box section .que_text {
         font-size: 19px;
+    }
+    .quiz_box {
+        width: 93vw;
     }
 }
 

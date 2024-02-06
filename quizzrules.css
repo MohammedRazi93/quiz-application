@@ -112,7 +112,7 @@ body {
 
   @media (max-width: 414px) {
     .rules {
-        height: 52vh;
+        height: 58vh;
     }
     body {
         margin-top: 7px;
@@ -122,7 +122,7 @@ body {
 
   @media(max-width: 375px) {
     .rules {
-        height: 52vh;
+        height: 55vh;
     }
 
     body {
@@ -132,7 +132,7 @@ body {
 
   @media(max-width: 320px) {
     .rules {
-        height: 52vh;
+        height: 50vh;
     }
 
     body {
